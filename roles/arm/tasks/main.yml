@@ -1,0 +1,26 @@
+---
+
+- name: directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0750
+  loop:
+    - ~/.local/
+    - ~/.local/bin
+    - ~/.local/bin/arm-none-eabi
+
+- name: arm-none-eabi
+  unarchive:
+    src: https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
+    dest: ~/.local/bin
+    remote_src: yes
+  tags: user
+
+- name: copy binary
+  file:
+    src: ~/.local/bin/gcc-arm-none-eabi-10.3-2021.10/bin
+    dest: ~/.local/bin/arm-none-eabi
+    state: link
+    force: yes
+  tags: user

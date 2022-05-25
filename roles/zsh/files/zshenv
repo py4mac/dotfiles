@@ -1,0 +1,9 @@
+# CONFIGS
+LANG="en_US.UTF-8"
+PATH=.venv/bin:$HOME/.local/bin:$HOME/.local/bin/arm-none-eabi:$HOME/.local/bin/go/bin:/snap/bin:/usr/local/bin:/usr/local:sbin:/usr/bin:/usr/sbin:/bin:/sbin
+# OPTIONS
+ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_CUSTOM=$HOME/.zsh.d
+# EXPORTS
+export KEYTIMEOUT=1
+export ZSH=$HOME/.oh-my-zsh

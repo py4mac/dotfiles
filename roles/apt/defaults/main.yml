@@ -1,0 +1,62 @@
+package_upgrade: yes
+packages:
+  # general tools
+  - apt-utils
+  - sudo
+  - curl
+  - git-core
+  - gnupg
+  - locales
+  - nodejs
+  - zsh
+  - wget
+  - nano
+  - npm
+  - fonts-powerline
+  - tmux
+  - vim
+  - openssh-client
+  - apt-transport-https
+  - ca-certificates
+  - software-properties-common
+  - python3
+  - python3-pip
+  - python3-pexpect
+  - pylint3
+  - python3-git
+  - python3-jinja2
+  - python3-setuptools
+  - virtualenv
+  - htop
+  - jq
+  - tree
+  - python-is-python3
+  - ruby-full
+  - cmake
+  - graphviz
+  - default-jre
+  # embedded tools
+  - openocd
+  # yocto tools
+  - gawk
+  - diffstat
+  - unzip
+  - texinfo
+  - gcc-multilib
+  - build-essential
+  - chrpath
+  - socat
+  - cpio
+  - xz-utils
+  - debianutils
+  - iputils-ping
+  - libegl1-mesa
+  - libsdl1.2-dev
+  - iproute2
+  - file
+  - iptables
+  - zstd
+  - liblz4-tool
+
+# remove_packages:
+#   - gnome-shell-extension-ubuntu-dock

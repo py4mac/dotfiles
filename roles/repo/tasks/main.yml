@@ -1,0 +1,9 @@
+---
+
+- name: repo
+  get_url:
+    url: https://storage.googleapis.com/git-repo-downloads/repo
+    dest: ~/.local/bin/repo
+    mode: '0755'
+    force: 'yes'
+  tags: user

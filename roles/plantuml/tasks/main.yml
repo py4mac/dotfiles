@@ -1,0 +1,15 @@
+---
+
+- name: plantuml
+  get_url:
+    url: http://sourceforge.net/projects/plantuml/files/plantuml.jar/download
+    dest: ~/.local/bin/plantuml.jar
+    force: 'yes'
+  tags: user
+
+- name: environ
+  copy:
+    src: "{{ role_path }}/files/plantuml"
+    dest: ~/.local/bin/plantuml
+    mode: a+x
+  tags: user

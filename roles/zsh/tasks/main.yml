@@ -1,0 +1,77 @@
+---
+
+- name: Install zsh
+  apt: name=zsh state=present
+  become: true
+  become_user: root
+  become_method: sudo
+
+- name: Install PowerLine
+  apt: name=powerline state=present
+  become: true
+  become_user: root
+  become_method: sudo
+
+- name: directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0750
+  loop:
+    - ~/.zsh.d/
+    - ~/.zsh.d/themes
+    - ~/.zsh.d/plugins
+
+- name: Install Fonts-PowerLine
+  apt: name=fonts-powerline state=present
+  become: true
+  become_user: root
+  become_method: sudo
+
+- name: Install oh my zsh
+  git:
+      repo: https://github.com/robbyrussell/oh-my-zsh.git
+      dest: ~/.oh-my-zsh
+      depth: 1
+
+- name: Install powerlevel10k
+  git:
+      repo: https://github.com/romkatv/powerlevel10k.git 
+      dest: ~/.zsh.d/themes/powerlevel10k
+      depth: 1
+
+- name: theme
+  file:
+    src: ~/.zsh.d/themes/powerlevel10k/powerlevel10k.zsh-theme
+    dest: ~/.zsh.d/themes/powerlevel10k.zsh-theme
+    state: link
+    force: yes
+  tags: user
+
+- name: plugins
+  git:
+    repo: "https://github.com/{{ item }}.git"
+    dest: "~/.zsh.d/plugins/{{ item | basename}}"
+    depth: 1
+  with_items:
+    - djui/alias-tips
+    - hlissner/zsh-autopair
+    - zsh-users/zsh-completions
+    - zsh-users/zsh-autosuggestions
+    - zsh-users/zsh-syntax-highlighting
+
+- name: environ
+  copy:
+    src: "{{ role_path }}/files/zshenv"
+    dest: ~/.zshenv
+    # state: link
+    # force: yes
+  tags: user
+
+- name: config
+  template:
+    src: "zshrc"
+    dest: ~/.zshrc
+    # state: link
+    # force: yes
+  tags: user

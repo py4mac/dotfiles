@@ -1,0 +1,39 @@
+- name: Set up local workstation
+  hosts: local
+  roles:
+    - role: apt
+      tags:
+        - apt
+    - role: git
+      tags:
+        - git
+    # - role: docker
+    #   tags:
+    #     - docker
+    - role: zsh
+      tags:
+        - zsh
+    - role: arm
+      tags:
+        - arm
+    - role: ceedling
+      tags:
+        - ceedling
+    - role: repo
+      tags:
+        - repo
+    - role: rust
+      tags:
+        - rust
+    - role: plantuml
+      tags:
+        - plantuml
+    # - role: vscode
+    #   tags:
+    #     - vscode
+    - role: vscodeserver
+      tags:
+        - vscodeserver
+    - role: golang
+      tags:
+        - golang

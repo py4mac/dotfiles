@@ -1,0 +1,6 @@
+- name: Install ceedling
+  shell: |
+    gem install ceedling
+  become: true
+  become_user: root
+  become_method: sudo
