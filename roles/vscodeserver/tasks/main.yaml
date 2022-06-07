@@ -11,7 +11,7 @@
     code-server --extensions-dir $HOME/.vscode-server/extensions --install-extension "{{ item }}"
   loop:
     - jebbs.plantuml
-    - numaru.vscode-ceedling-test-adapter
+    - numaru.vscode-ceedling-test-adapter@v1.9.1
     - ms-vscode.cpp-tools
     - ms-vscode.cmake-tools
     - twxs.cmake
