@@ -4,36 +4,62 @@
     - role: apt
       tags:
         - apt
+        - venv
+        - env
     - role: git
       tags:
         - git
-    # - role: docker
-    #   tags:
-    #     - docker
+        - venv
+        - env
+    - role: docker
+      tags:
+        - docker
+        - env
     - role: zsh
       tags:
         - zsh
+        - venv
+        - env
     - role: arm
       tags:
         - arm
+        - venv
+        - env
     - role: ceedling
       tags:
         - ceedling
+        - venv
+        - env
     - role: repo
       tags:
         - repo
+        - venv
+        - env
     - role: rust
       tags:
         - rust
+        - venv
+        - env
     - role: plantuml
       tags:
         - plantuml
-    # - role: vscode
-    #   tags:
-    #     - vscode
+        - venv
+        - env
+    - role: vscode
+      tags:
+        - vscode
+        - env
     - role: vscodeserver
       tags:
         - vscodeserver
+        - venv
     - role: golang
       tags:
         - golang
+        - venv
+        - env
+    - role: yocto
+      tags:
+        - yocto
+        - venv
+        - env

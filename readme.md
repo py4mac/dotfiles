@@ -10,7 +10,21 @@ Target embedded software development:
 - yocto utils
 ...
 
+## Environment configuration
+
+### Preparing local file
+
+Configuration file is located [here](./group_vars/local)
+
+### Option1 - Installing it on a new machine
 This command installs all required packages
 ```sh
-$ ./bin/dot-bootstrap all
+$ ./bin/dot-bootstrap env
+```
+
+### Option2 - Installing it inside a container
+
+This command installs all required packages
+```sh
+$ ./bin/dot-bootstrap venv
 ```

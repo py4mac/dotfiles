@@ -24,15 +24,15 @@
 
 - name: Prepare vscode extension folder
   shell: |
-    mkdir -p $HOME/.vscode-server/extensions
+    mkdir -p $HOME/.vscode/extensions
   tags: user
 
 - name: Install vscode extension
   shell: |
-    code --extensions-dir $HOME/.vscode-server/extensions --install-extension "{{ item }}"
+    code --extensions-dir $HOME/.vscode/extensions --install-extension "{{ item }}"
   loop:
     - jebbs.plantuml
-    - numaru.vscode-ceedling-test-adapter@v1.9.1
+    - numaru.vscode-ceedling-test-adapter
     - ms-vscode.cpp-tools
     - ms-vscode.cmake-tools
     - twxs.cmake
@@ -43,9 +43,3 @@
     - ms-azuretools.vscode-docker
     - gruntfuggly.todo-tree
   tags: user
-
-# - name: Install ceedling extension
-#   shell: |
-#     wget https://github.com/numaru/vscode-ceedling-test-adapter/releases/download/v1.9.1/vscode-ceedling-test-adapter-1.9.1.vsix
-#     code-server --extensions-dir ~/.vscode-server/extensions --install-extension vscode-ceedling-test-adapter-1.9.1.vsix
-#   tags: user
