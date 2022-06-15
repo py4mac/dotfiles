@@ -1,0 +1,6 @@
+---
+
+- name: Install cooker
+  shell: |
+    python -m pip install --upgrade git+https://github.com/cpb-/yocto-cooker.git
+  tags: user
