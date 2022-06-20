@@ -28,3 +28,23 @@ This command installs all required packages
 ```sh
 $ ./bin/dot-bootstrap venv
 ```
+
+In order to build dockerfile, you can run the following command
+```sh
+$ docker build -t virtual-env .
+```
+
+As an example, to run it using docker-compose
+
+```sh
+services:
+  virtual-env:
+    image: virtual-env
+    volumes:
+      - ./workspace:/home/dev/workspace
+    secrets:
+      - user_ssh_key
+secrets:
+  user_ssh_key:
+    file: ~/.ssh/id_rsa
+```
