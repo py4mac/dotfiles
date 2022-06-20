@@ -30,5 +30,10 @@ RUN ./bin/dot-bootstrap venv
 # set workdir
 WORKDIR $WORKSPACE
 
+# setup ssh
+RUN mkdir -p /home/$USER/.ssh && ln -s /run/secrets/user_ssh_key /home/$USER/.ssh/id_rsa
+RUN chown -R $USER:$USER /home/$USER/.ssh
+RUN echo "Host *.trabe.io\n\tStrictHostKeyChecking no\n" >> /home/$USER/.ssh/config
+
 # start zsh
 ENTRYPOINT [ "/bin/zsh" ]
