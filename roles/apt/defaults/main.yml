@@ -37,6 +37,8 @@ packages:
   - default-jre
   # embedded tools
   - openocd
+  - doxygen
+  - doxygen-gui
   # yocto tools
   - gawk
   - diffstat
